@@ -1,14 +1,14 @@
 <!--
   ================================================================
   ASHLEY ACEVEDO  ·  THE ALBUM
-  Luxury travel & hospitality. Outbound pitch link.
+  Travel, food, beauty & lifestyle. Outbound pitch link.
   Single file, no build step, no dependencies.
 
   CONCEPT: a green archive folder opened on a table. Every section
   is a cream page laid on the folder, tabbed, taped and cornered.
 
   EDIT EVERYTHING IN THE  DATA  OBJECT AT THE BOTTOM.
-  Images go in /media next to this file. Missing files fall back
+  Video posters load live from TikTok. Photos go in /Media next to this file. Missing files fall back
   to a labelled placeholder, never a broken frame.
   ================================================================
 -->
@@ -17,10 +17,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ashley Acevedo &middot; Luxury Travel &amp; Hospitality Content</title>
-<meta name="description" content="Luxury travel and hospitality content creator. 3M+ Instagram views in 90 days, 97.8% of engagement from non-followers. Weehawken NJ, NYC metro.">
-<meta property="og:title" content="Ashley Acevedo &middot; Luxury Travel &amp; Hospitality">
-<meta property="og:description" content="3M+ Instagram views in 90 days. 97.8% of engagement from non-followers.">
+<title>Ashley Acevedo &middot; Travel, Beauty &amp; Lifestyle Creator</title>
+<meta name="description" content="Travel, food, beauty and Latina lifestyle creator based in Weehawken NJ. 43K on TikTok, 3.7M likes, seven videos past 1M views. Partners include Disney's The Lion King and Bergen Town Center.">
+<meta property="og:title" content="Ashley Acevedo &middot; Travel, Beauty &amp; Lifestyle Creator">
+<meta property="og:description" content="Seven videos past 1M views. Travel, food, beauty and culture from New Jersey and NYC.">
+<meta property="og:image" content="https://loperenamanagement.github.io/ashley-portfolio/Media/ashley.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
@@ -436,6 +437,30 @@ body::before{
 .direct{margin-top:18px;font-family:var(--garam);font-size:15.5px;opacity:.75;line-height:1.6}
 .direct a{color:var(--moss);text-decoration:none;border-bottom:1px solid currentColor}
 
+/* poster + play badge on film frames */
+.frame{cursor:pointer;background:none;border:0;padding:0;text-align:left;font:inherit}
+.frame .win .badge{position:absolute;left:8px;top:8px;z-index:2;font-family:var(--jost);font-size:8px;letter-spacing:.2em;
+  text-transform:uppercase;background:rgba(22,19,16,.72);color:var(--cream);padding:5px 7px}
+.frame .win .play{position:absolute;inset:0;margin:auto;width:44px;height:44px;border-radius:50%;z-index:2;
+  background:rgba(242,237,225,.9);display:flex;align-items:center;justify-content:center;opacity:.92;transition:transform .3s}
+.frame .win .play::after{content:"";border-left:13px solid var(--moss-deep);border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px}
+.frame:hover .win .play{transform:scale(1.1)}
+.frame .win.ig{background:linear-gradient(160deg,#6B7A4F,#3C4733 55%,#6B4F3C)}
+.frame .sub{display:block;font-family:var(--garam);font-size:13.5px;line-height:1.35;opacity:.7;padding:4px 2px 0}
+
+.face.front .img img,.frame .win img{position:absolute;inset:0}
+
+/* video lightbox */
+.lb{position:fixed;inset:0;z-index:10000;background:rgba(20,18,14,.86);display:none;align-items:center;justify-content:center;padding:16px}
+.lb.on{display:flex}
+.lb .box{position:relative;width:min(380px,100%);background:#000;box-shadow:0 30px 70px rgba(0,0,0,.6)}
+.lb iframe{display:block;width:100%;aspect-ratio:9/16;max-height:82vh;border:0;background:#000}
+.lb .box.ig iframe{aspect-ratio:auto;height:min(720px,82vh);background:#fff}
+.lb .x{position:absolute;top:-40px;right:0;background:none;border:0;color:var(--cream);font-family:var(--jost);
+  font-size:11px;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;padding:8px}
+.lb .out{display:block;text-align:center;padding:10px;font-family:var(--jost);font-size:9.5px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--cream);background:var(--moss-deep);text-decoration:none}
+
 footer{
   padding:30px 0 42px;font-family:var(--jost);font-size:9.5px;
   letter-spacing:.24em;text-transform:uppercase;color:rgba(242,237,225,.48);
@@ -450,17 +475,17 @@ footer a:hover{color:var(--brass)}
 <!-- ======================= MASTHEAD / FOLDER ======================= -->
 <div class="masthead">
   <div class="stage">
-    <div class="folderbar"><span class="lip">Travel &amp; Hospitality &middot; Portfolio 2026</span></div>
+    <div class="folderbar"><span class="lip">Travel &middot; Beauty &middot; Lifestyle &middot; Portfolio 2026</span></div>
   </div>
   <div class="stage">
     <div class="hero">
       <div class="tape top"></div>
       <div class="hero-grid">
         <div>
-          <p class="role">Luxury Travel &amp; Hospitality Content Creator</p>
+          <p class="role">Travel, Food, Beauty &amp; Lifestyle Creator</p>
           <h1 class="smash">ASHLEY<br>ACEVEDO</h1>
           <p class="tag script">I make people want to be somewhere they've never been.</p>
-          <p class="lede">New Jersey based, with a background in marketing and visual production. I turn destinations, properties and experiences into content that moves people.</p>
+          <p class="lede">First-generation Dominican Latina based in New Jersey, ten minutes from Manhattan. I turn cafes, hotels, beauty launches and big nights out into content that feels like a friend telling you where to go next, and my audience actually goes.</p>
           <div class="hero-foot">
             <span class="stamp">Based in<b>Weehawken NJ</b>Travels for shoots</span>
           </div>
@@ -496,7 +521,7 @@ footer a:hover{color:var(--brass)}
   <section class="sheet">
     <span class="tab">Partners</span>
     <p class="eyebrow">Selected partners</p>
-    <h2 class="smash moss rv" data-fit>BRANDS I'VE WORKED WITH</h2>
+    <h2 class="smash moss rv" data-fit>BRANDS I'VE CREATED WITH</h2>
     <div class="brands rv" id="brands"></div>
   </section>
 
@@ -510,15 +535,15 @@ footer a:hover{color:var(--brass)}
       <div class="tabs" id="tabs"></div>
     </div>
     <div class="film rv" id="film"><div class="reel" id="reel"></div></div>
-    <p class="film-hint"><span></span> Drag the strip</p>
+    <p class="film-hint"><span></span> Drag the strip &middot; tap a frame to watch</p>
   </section>
 
   <!-- ======================= CONCEPTS ======================= -->
   <section class="sheet">
     <span class="tab">Concepts</span>
     <p class="eyebrow">Formats ready to pitch</p>
-    <h2 class="smash rv" data-fit>DESTINATION CONCEPTS</h2>
-    <p class="note rv">Four formats already built and tested. Turn a card over to read the pitch.</p>
+    <h2 class="smash rv" data-fit>READY-TO-PITCH CONCEPTS</h2>
+    <p class="note rv">Four formats I've already filmed and tested on my own channels. Turn a card over to read the pitch.</p>
     <div class="deck" id="deck"></div>
   </section>
 
@@ -529,9 +554,9 @@ footer a:hover{color:var(--brass)}
     <h2 class="smash moss rv" data-fit>WHAT I OFFER</h2>
     <div class="offers rv" id="offers"></div>
     <div class="terms-block rv">
-      <p class="rate">Custom packages and rates on request.</p>
+      <p class="rate">Sponsored videos from $1,500. Full rate card on request.</p>
       <!-- EDIT: this line is what filters out gifting-only offers -->
-      <p class="fine">Paid partnerships and long-form destination work. Hosted stays are considered alongside a fee, not in place of one.</p>
+      <p class="fine">I work on paid partnerships. Hosted stays and product are welcome alongside a fee, not in place of one.</p>
     </div>
   </section>
 
@@ -557,7 +582,7 @@ footer a:hover{color:var(--brass)}
         <ul id="recap"><li class="empty">Pick from the left and this writes itself</li></ul>
         <a class="cta" id="send" href="#">Send it</a>
         <!-- CONTACT: to put the phone number back, add it to the line below -->
-        <p class="direct">Or email <a href="mailto:loperenamanagementllc@gmail.com">loperenamanagementllc@gmail.com</a> directly. Same-day reply.</p>
+        <p class="direct">Or email me at <a href="mailto:adacevedo6@gmail.com">adacevedo6@gmail.com</a>. I reply within a day.</p>
       </div>
     </div>
   </section>
@@ -567,93 +592,115 @@ footer a:hover{color:var(--brass)}
 <footer>
   <div class="stage">
     <span>Ashley Acevedo</span>
-    <span>Represented by Loperena Management</span>
-    <span><a href="https://www.instagram.com/ashley.acevedo" target="_blank" rel="noopener">Instagram</a> &nbsp;/&nbsp; <a href="https://www.tiktok.com/ashleyxacevedo" target="_blank" rel="noopener">TikTok</a></span>
+    <span><a href="mailto:adacevedo6@gmail.com">adacevedo6@gmail.com</a></span>
+    <span><a href="https://www.instagram.com/ashley.acevedo" target="_blank" rel="noopener">Instagram</a> &nbsp;/&nbsp; <a href="https://www.tiktok.com/@ashleyxacevedo" target="_blank" rel="noopener">TikTok</a></span>
   </div>
 </footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Video player">
+  <div class="box" id="lbbox">
+    <button class="x" id="lbx" aria-label="Close">Close &times;</button>
+    <iframe id="lbf" title="Video" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    <a class="out" id="lbo" href="#" target="_blank" rel="noopener">Open original</a>
+  </div>
+</div>
 
 <script>
 /* ==================================================================
    DATA  ·  edit everything here
    ================================================================== */
-const EMAIL = "loperenamanagementllc@gmail.com";
+const EMAIL = "adacevedo6@gmail.com";
+const TT = "ashleyxacevedo";
 
 const DATA = {
 
-  /* sweep = how far the dial draws, 0-100. Only 97.8 is a true
-     proportion; the other two are set sweeps behind a real number. */
+  /* sweep = how far the dial draws, 0-100. Visual only. */
   dials: [
-    { num:"3M+",   sweep:88,   cap:"Instagram views<br>past 90 days" },
-    { num:"97.8%", sweep:97.8, cap:"of engagement from<br>non-followers" },
-    { num:"525K+", sweep:76,   cap:"Instagram engagements<br>past 90 days" }
+    { num:"11M",  sweep:96, cap:"views on my<br>top TikTok" },
+    { num:"7",    sweep:70, cap:"videos past<br>1M views" },
+    { num:"2.3M", sweep:82, cap:"Instagram views on<br>two 2026 Reels" }
   ],
 
   ledger: [
     { n:"43K",  l:"TikTok followers" },
     { n:"3.7M", l:"TikTok likes" },
-    { n:"6.9K", l:"Instagram followers" },
-    { n:"90 days", l:"Reporting window" }
+    { n:"7K",   l:"Instagram followers" },
+    { n:"NJ / NYC", l:"Home base" }
   ],
 
-  /* add  logo:"media/prada.svg"  to swap a wordmark for a real logo */
+  /* add  logo:"Media/brand.svg"  to swap a wordmark for a real logo */
   brands: [
-    { name:"Arajet",          cat:"Aviation"   },
-    { name:"espoir",          cat:"Beauty"     },
-    { name:"Express",         cat:"Fashion"    },
-    { name:"Fenty",           cat:"Beauty"     },
-    { name:"Maison Margiela", cat:"Fashion"    },
-    { name:"Meta",            cat:"Technology" },
-    { name:"Miu Miu",         cat:"Fashion"    },
-    { name:"Neutrogena",      cat:"Beauty"     },
-    { name:"Prada",           cat:"Fashion"    },
-    { name:"Shopify",         cat:"Commerce"   },
-    { name:"SKIMS",           cat:"Fashion"    },
-    { name:"Valentino",       cat:"Fashion"    }
+    { name:"Disney's The Lion King", cat:"Broadway" },
+    { name:"Bergen Town Center", cat:"Retail &amp; events" },
+    { name:"Kendra Scott",       cat:"Jewelry" },
+    { name:"SanDisk",            cat:"Technology" },
+    { name:"Motel Rocks",        cat:"Fashion" },
+    { name:"Morphe",             cat:"Beauty" },
+    { name:"COVERGIRL",          cat:"Beauty" },
+    { name:"Fenty Hair",         cat:"Hair" },
+    { name:"Philosophy",         cat:"Skincare" },
+    { name:"The Creme Shop",     cat:"Beauty" },
+    { name:"LOOPS",              cat:"Skincare" },
+    { name:"espoir",             cat:"Beauty" }
   ],
 
-  /* views: the real public count. Empty string hides it.
-     url: link to the post. Empty string means no link. */
+  /* tt = TikTok video id, ig = Instagram reel code. views = public count
+     at time of writing; empty hides it. Posters load live from TikTok. */
   work: [
-    { name:"Mokafe",         cat:"travel", views:"", img:"media/mokafe.jpg",       url:"" },
-    { name:"Maracaibo",      cat:"travel", views:"", img:"media/maracaibo.jpg",    url:"" },
-    { name:"Angelina Paris", cat:"travel", views:"", img:"media/angelina.jpg",     url:"" },
-    { name:"Cafe Sabarsky",  cat:"travel", views:"", img:"media/sabarsky.jpg",     url:"" },
-    { name:"Cafe Habibti",   cat:"travel", views:"", img:"media/habibti.jpg",      url:"" },
-    { name:"Chashni",        cat:"travel", views:"", img:"media/chashni.jpg",      url:"" },
-    { name:"COVERGIRL",      cat:"beauty", views:"", img:"media/covergirl-01.jpg", url:"" },
-    { name:"LOOPS",          cat:"beauty", views:"", img:"media/loops.jpg",        url:"" },
-    { name:"Fenty Hair",     cat:"beauty", views:"", img:"media/fenty-hair.jpg",   url:"" },
-    { name:"COVERGIRL",      cat:"beauty", views:"", img:"media/covergirl-02.jpg", url:"" },
-    { name:"The Creme Shop", cat:"beauty", views:"", img:"media/creme-shop.jpg",   url:"" },
-    { name:"Philosophy",     cat:"beauty", views:"", img:"media/philosophy.jpg",   url:"" }
+    { name:"American Dream &times; adidas", sub:"World Cup 2026 drop",   cat:"brand",  views:"84.7K", tt:"7609782004858588430" },
+    { name:"The Lion King", sub:"Disney on Broadway, paid partnership",  cat:"brand",  views:"",      tt:"7643527095435414797" },
+    { name:"Bergen Town Center", sub:"World Cup watch party",       cat:"brand",  views:"",      tt:"7660980849717857550" },
+    { name:"Bergen Town Center", sub:"Paid partnership",             cat:"brand",  views:"",      tt:"7572403044046966029" },
+    { name:"SanDisk", sub:"Sponsored post",                               cat:"brand",  views:"",      tt:"7619161320709016846" },
+    { name:"Medieval Times", sub:"Birthday night out",                    cat:"travel", views:"437K",  tt:"7582098997339376909" },
+    { name:"Dominican Republic", sub:"Travel diary",                      cat:"travel", views:"106K",  tt:"7454323371036331310" },
+    { name:"Maracaibo", sub:"NJ's hottest new restaurant",                cat:"travel", views:"72.3K", ig:"DMl6luyJvYO" },
+    { name:"Cafe Habibti", sub:"Greenwich Village",                       cat:"travel", views:"19.4K", tt:"7573898865015835917" },
+    { name:"Chashni", sub:"Pakistani cafe, NYC",                          cat:"travel", views:"6.8K",  tt:"7474812800326438190" },
+    { name:"Cafe Sabarsky", sub:"Upper East Side",                        cat:"travel", views:"",      tt:"7493293592585293102" },
+    { name:"Angelina Paris", sub:"Hot chocolate, NYC",                    cat:"travel", views:"",      tt:"7403473177445223711" },
+    { name:"Medell&iacute;n", sub:"Colombia trip",                        cat:"travel", views:"",      tt:"7680902751739530509" },
+    { name:"Morphe", sub:"Chroma-Plus palette",                           cat:"beauty", views:"",      tt:"7673200021419969805" },
+    { name:"COVERGIRL", sub:"Soft lash look",                             cat:"beauty", views:"",      tt:"7469971768627907886" },
+    { name:"Fenty Hair", sub:"Curly hair routine",                        cat:"beauty", views:"",      tt:"7479491457192037675" },
+    { name:"Philosophy", sub:"Skincare",                                  cat:"beauty", views:"",      tt:"7652203005076376846" },
+    { name:"The Creme Shop", sub:"Jersey City pop-up",                    cat:"beauty", views:"",      tt:"7556417232440429837" },
+    { name:"LOOPS", sub:"Face masks",                                     cat:"beauty", views:"",      tt:"7489290523954679086" },
+    { name:"Bombshell blowout", sub:"Hair",                               cat:"beauty", views:"11.7K", ig:"DP-WrCWjP37" },
+    { name:"Marshalls finds", sub:"Lululemon at Marshalls",               cat:"viral",  views:"976K",  tt:"7343846926770638126" },
+    { name:"Dominicanas", sub:"Culture",                                  cat:"viral",  views:"668K",  tt:"7188599515220430123" },
+    { name:"Santo Domingo", sub:"Stitch, culture",                        cat:"viral",  views:"239K",  tt:"6935566941281094917" },
+    { name:"Friendship", sub:"Instagram Reel",                            cat:"viral",  views:"1.1M",  ig:"DXN_i9WDN5l" },
+    { name:"Good Friday at Old St. Patrick's", sub:"Instagram Reel",      cat:"viral",  views:"1.2M",  ig:"DWstXFIjWqv" },
+    { name:"Stitch", sub:"My most viewed video",                          cat:"viral",  views:"11M",   tt:"6957434353093807366" }
   ],
 
   concepts: [
-    { title:"48 Hours In", img:"media/concept-48hours.jpg",
-      body:"A city guide series capturing the best a destination has to offer in a weekend. Built as a multi-part vertical series so it keeps working long after the first post.",
-      fit:"Tourism boards, boutique hotels" },
-    { title:"Weekend Getaway", img:"media/concept-getaway.jpg",
-      body:"A full stay experience from arrival to checkout. Rooms, grounds, dining, and the small details a property spends money on and rarely gets filmed well.",
-      fit:"Hotels and resorts" },
-    { title:"Hidden Cafes", img:"media/concept-cafes.jpg",
-      body:"Intimate food and culture storytelling from the most aesthetically compelling spots in a city. The format with the deepest body of work behind it.",
-      fit:"Restaurant groups, food tourism" },
-    { title:"Solo Travel", img:"media/concept-solo.jpg",
-      body:"Aspirational solo travel content for the woman who travels with intention. Positions a destination as a decision rather than a discount.",
-      fit:"Lifestyle and travel brands" }
+    { title:"Hidden Cafes", tt:"7573898865015835917",
+      body:"Food and culture storytelling from the most beautiful spots in a city. My deepest body of work, from Greenwich Village to Paterson.",
+      fit:"Cafes, restaurant groups, food tourism" },
+    { title:"Big Night Out", tt:"7582098997339376909",
+      body:"An experience told from arrival to the last photo. Medieval Times hit 437K views because it felt like you were at the table with us.",
+      fit:"Venues, attractions, Broadway" },
+    { title:"Mall Moments", tt:"7609782004858588430",
+      body:"Seasonal drops, events and watch parties filmed on site so people show up that week. Proven with Bergen Town Center.",
+      fit:"Malls, retail, event teams" },
+    { title:"48 Hours In", tt:"7680902751739530509",
+      body:"A city or stay guide built as a short series, so it keeps working after the first post. Filmed in Medell&iacute;n and Santo Domingo.",
+      fit:"Hotels, tourism boards, airlines" }
   ],
 
   offers: [
-    { t:"Destination storytelling", d:"Multi-video city and destination series for tourism brands." },
-    { t:"Hotel &amp; resort content", d:"Full-stay storytelling. Arrival to checkout, suites to rooftop." },
-    { t:"Instagram Reels", d:"Aesthetic-driven Reels designed to be saved and shared." },
-    { t:"TikTok video", d:"Short-form vertical built for discovery and reach." },
-    { t:"Licensing &amp; paid ad creative", d:"Full usage rights for your channels, campaigns and paid media." },
-    { t:"On-location production", d:"Travels for shoots, with a visual production background behind the camera." }
+    { t:"Sponsored TikTok &amp; Reels", d:"On my page, written and filmed in my voice, built for discovery." },
+    { t:"UGC &amp; ad creative", d:"Vertical video for your channels and paid media, delivered ready to run." },
+    { t:"Events &amp; on-site coverage", d:"Launches, watch parties and openings, posted while people can still come." },
+    { t:"Food &amp; cafe features", d:"The format my audience saves most. Menu, room, and the reason to go." },
+    { t:"Hotel &amp; destination stays", d:"Arrival to checkout, or a short series for a city." },
+    { t:"Licensing &amp; usage", d:"Extend any video to your ads and channels, by the month." }
   ],
 
-  who:  ["Hotel or resort","Tourism board","Restaurant group","Beauty brand","Agency"],
-  want: ["Full-stay storytelling","Destination series","Single reel or TikTok","Paid ad creative","Licensing only"]
+  who:  ["Brand","Mall or venue","Restaurant or cafe","Hotel or resort","Tourism board","Agency"],
+  want: ["Sponsored TikTok or Reel","UGC for ads","Event or on-site coverage","Destination series","Ongoing ambassador"]
 };
 
 /* ================================================================== */
@@ -684,25 +731,67 @@ $("#brands").innerHTML = DATA.brands.map((b,i) =>
   '</div>').join("");
 
 /* film strip */
-const CATS = [["all","Everything"],["travel","Travel &amp; hospitality"],["beauty","Beauty &amp; lifestyle"]];
+const CATS = [["all","Everything"],["brand","Brand partnerships"],["travel","Travel &amp; food"],["beauty","Beauty"],["viral","Culture &amp; viral"]];
 $("#tabs").innerHTML = CATS.map(([k,l],i) =>
   '<button data-c="' + k + '" aria-pressed="' + (i===0) + '">' + l + '</button>').join("");
+
+const ttUrl = id => "https://www.tiktok.com/@" + TT + "/video/" + id;
+const igUrl = c  => "https://www.instagram.com/reel/" + c + "/";
+const posters = {};
+function poster(id){
+  if(!posters[id]) posters[id] = fetch("https://www.tiktok.com/oembed?url=" + encodeURIComponent(ttUrl(id)))
+    .then(r => r.json()).then(j => j.thumbnail_url || "").catch(() => "");
+  return posters[id];
+}
+function fillPosters(root){
+  root.querySelectorAll("[data-poster]").forEach(el => {
+    poster(el.dataset.poster).then(src => {
+      if(!src) return;
+      const img = new Image(); img.alt = ""; img.loading = "lazy"; img.src = src;
+      img.onerror = () => img.remove();
+      el.appendChild(img);
+    });
+  });
+}
 
 function reel(cat){
   const items = DATA.work.filter(w => cat === "all" || w.cat === cat);
   $("#reel").innerHTML = items.map(w => {
-    const tag  = w.url ? "a" : "div";
-    const href = w.url ? ' href="' + w.url + '" target="_blank" rel="noopener"' : "";
-    const inner =
-      '<div class="win"><div class="ph"><i></i><b>' + esc(w.name) + '</b></div>' +
-      '<img src="' + w.img + '" alt="' + esc(w.name) + '" loading="lazy" onerror="this.remove()"></div>' +
-      '<div class="cap"><span class="nm">' + esc(w.name) + '</span>' +
-      (w.views ? '<span class="vw">' + esc(w.views) + '</span>' : '') + '</div>';
-    return '<' + tag + ' class="frame"' + href + '>' + inner + '</' + tag + '>';
+    const k = w.tt ? "tt" : "ig", id = w.tt || w.ig;
+    return '<button type="button" class="frame" data-k="' + k + '" data-id="' + id + '">' +
+      '<div class="win' + (k === "ig" ? " ig" : "") + '"' + (w.tt ? ' data-poster="' + w.tt + '"' : '') + '>' +
+        '<div class="ph"><i></i><b>' + w.name + '</b></div>' +
+        '<span class="badge">' + (k === "tt" ? "TikTok" : "Instagram") + '</span><span class="play"></span></div>' +
+      '<div class="cap"><span class="nm">' + w.name + '</span>' +
+      (w.views ? '<span class="vw">' + esc(w.views) + '</span>' : '') + '</div>' +
+      (w.sub ? '<span class="sub">' + w.sub + '</span>' : '') +
+    '</button>';
   }).join("");
   $("#reel").scrollLeft = 0;
+  fillPosters($("#reel"));
 }
 reel("all");
+
+/* lightbox player */
+function play(k, id){
+  const f = $("#lbf"), box = $("#lbbox");
+  box.classList.toggle("ig", k === "ig");
+  f.src = k === "tt"
+    ? "https://www.tiktok.com/player/v1/" + id + "?autoplay=1&rel=0&description=0"
+    : "https://www.instagram.com/reel/" + id + "/embed/";
+  $("#lbo").href = k === "tt" ? ttUrl(id) : igUrl(id);
+  $("#lbo").textContent = k === "tt" ? "Open on TikTok" : "Open on Instagram";
+  $("#lb").classList.add("on");
+  $("#lbx").focus();
+}
+function closeLb(){ $("#lb").classList.remove("on"); $("#lbf").src = "about:blank"; }
+$("#reel").addEventListener("click", e => {
+  const fr = e.target.closest(".frame"); if(!fr) return;
+  play(fr.dataset.k, fr.dataset.id);
+});
+$("#lbx").addEventListener("click", closeLb);
+$("#lb").addEventListener("click", e => { if(e.target.id === "lb") closeLb(); });
+addEventListener("keydown", e => { if(e.key === "Escape") closeLb(); });
 
 $("#tabs").addEventListener("click", e => {
   const b = e.target.closest("button"); if(!b) return;
@@ -733,15 +822,16 @@ $("#deck").innerHTML = DATA.concepts.map((c,i) =>
   '<button class="flipper" data-flip="false" aria-expanded="false">' +
     '<div class="inner"><div class="face front">' +
       '<div class="tape ' + (i % 2 ? "tr" : "tl") + '"></div>' +
-      '<div class="img cornered"><i></i><i></i><i></i><i></i>' +
-        '<div class="ph"><i></i><b>' + esc(c.img) + '</b></div>' +
-        '<img src="' + c.img + '" alt="" onerror="this.remove()"></div>' +
+      '<div class="img cornered" data-poster="' + c.tt + '"><i></i><i></i><i></i><i></i>' +
+        '<div class="ph"><i></i><b>' + c.title + '</b></div></div>' +
       '<div class="ttl">' + c.title + '</div>' +
     '</div>' +
     '<div class="face back"><div class="no">' + String(i+1).padStart(2,"0") + ' / 04</div>' +
       '<h3>' + c.title + '</h3><p>' + c.body + '</p><div class="fit">' + c.fit + '</div>' +
     '</div></div><div class="hint">Turn the card</div>' +
   '</button>').join("");
+
+fillPosters($("#deck"));
 
 $("#deck").addEventListener("click", e => {
   const f = e.target.closest(".flipper"); if(!f) return;
