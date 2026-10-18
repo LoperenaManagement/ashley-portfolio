@@ -18,7 +18,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ashley Acevedo &middot; Travel, Beauty &amp; Lifestyle Creator</title>
-<meta name="description" content="Travel, food, beauty and Latina lifestyle creator based in Weehawken NJ. 43K on TikTok, 3.7M likes, seven videos past 1M views. Partners include Disney's The Lion King and Bergen Town Center.">
+<meta name="description" content="Travel, food, beauty and Latina lifestyle creator based in Weehawken NJ. 3M+ Instagram views in 90 days, 3.7M TikTok likes. Partners include Disney's The Lion King, Shopify and Bergen Town Center.">
 <meta property="og:title" content="Ashley Acevedo &middot; Travel, Beauty &amp; Lifestyle Creator">
 <meta property="og:description" content="Seven videos past 1M views. Travel, food, beauty and culture from New Jersey and NYC.">
 <meta property="og:image" content="https://loperenamanagement.github.io/ashley-portfolio/Media/ashley.jpg">
@@ -445,7 +445,6 @@ body::before{
   background:rgba(242,237,225,.9);display:flex;align-items:center;justify-content:center;opacity:.92;transition:transform .3s}
 .frame .win .play::after{content:"";border-left:13px solid var(--moss-deep);border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px}
 .frame:hover .win .play{transform:scale(1.1)}
-.frame .win.ig{background:linear-gradient(160deg,#6B7A4F,#3C4733 55%,#6B4F3C)}
 .frame .sub{display:block;font-family:var(--garam);font-size:13.5px;line-height:1.35;opacity:.7;padding:4px 2px 0}
 
 .face.front .img img,.frame .win img{position:absolute;inset:0}
@@ -455,7 +454,6 @@ body::before{
 .lb.on{display:flex}
 .lb .box{position:relative;width:min(380px,100%);background:#000;box-shadow:0 30px 70px rgba(0,0,0,.6)}
 .lb iframe{display:block;width:100%;aspect-ratio:9/16;max-height:82vh;border:0;background:#000}
-.lb .box.ig iframe{aspect-ratio:auto;height:min(720px,82vh);background:#fff}
 .lb .x{position:absolute;top:-40px;right:0;background:none;border:0;color:var(--cream);font-family:var(--jost);
   font-size:11px;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;padding:8px}
 .lb .out{display:block;text-align:center;padding:10px;font-family:var(--jost);font-size:9.5px;letter-spacing:.22em;
@@ -515,6 +513,7 @@ footer a:hover{color:var(--brass)}
     <h2 class="smash rv" data-fit>REACH &amp; PERFORMANCE</h2>
     <div class="dials rv" id="dials"></div>
     <div class="ledger rv" id="ledger"></div>
+    <p class="note rv">Instagram figures from account insights. Screenshots available on request.</p>
   </section>
 
   <!-- ======================= BRANDS ======================= -->
@@ -582,7 +581,7 @@ footer a:hover{color:var(--brass)}
         <ul id="recap"><li class="empty">Pick from the left and this writes itself</li></ul>
         <a class="cta" id="send" href="#">Send it</a>
         <!-- CONTACT: to put the phone number back, add it to the line below -->
-        <p class="direct">Or email me at <a href="mailto:adacevedo6@gmail.com">adacevedo6@gmail.com</a>. I reply within a day.</p>
+        <p class="direct">Or email me at <a href="mailto:adacevedo6@gmail.com">adacevedo6@gmail.com</a>. I reply within a day. Represented by Loperena Management.</p>
       </div>
     </div>
   </section>
@@ -592,6 +591,7 @@ footer a:hover{color:var(--brass)}
 <footer>
   <div class="stage">
     <span>Ashley Acevedo</span>
+    <span>Represented by Loperena Management</span>
     <span><a href="mailto:adacevedo6@gmail.com">adacevedo6@gmail.com</a></span>
     <span><a href="https://www.instagram.com/ashley.acevedo" target="_blank" rel="noopener">Instagram</a> &nbsp;/&nbsp; <a href="https://www.tiktok.com/@ashleyxacevedo" target="_blank" rel="noopener">TikTok</a></span>
   </div>
@@ -616,21 +616,22 @@ const DATA = {
 
   /* sweep = how far the dial draws, 0-100. Visual only. */
   dials: [
-    { num:"11M",  sweep:96, cap:"views on my<br>top TikTok" },
-    { num:"7",    sweep:70, cap:"videos past<br>1M views" },
-    { num:"2.3M", sweep:82, cap:"Instagram views on<br>two 2026 Reels" }
+    { num:"3M+",   sweep:88,   cap:"Instagram views<br>past 90 days" },
+    { num:"97.8%", sweep:97.8, cap:"of engagement from<br>non-followers" },
+    { num:"525K+", sweep:76,   cap:"Instagram engagements<br>past 90 days" }
   ],
 
   ledger: [
     { n:"43K",  l:"TikTok followers" },
     { n:"3.7M", l:"TikTok likes" },
     { n:"7K",   l:"Instagram followers" },
-    { n:"NJ / NYC", l:"Home base" }
+    { n:"11M",  l:"Views on top TikTok" }
   ],
 
   /* add  logo:"Media/brand.svg"  to swap a wordmark for a real logo */
   brands: [
     { name:"Disney's The Lion King", cat:"Broadway" },
+    { name:"Shopify",            cat:"Commerce" },
     { name:"Bergen Town Center", cat:"Retail &amp; events" },
     { name:"Kendra Scott",       cat:"Jewelry" },
     { name:"SanDisk",            cat:"Technology" },
@@ -644,8 +645,9 @@ const DATA = {
     { name:"espoir",             cat:"Beauty" }
   ],
 
-  /* tt = TikTok video id, ig = Instagram reel code. views = public count
-     at time of writing; empty hides it. Posters load live from TikTok. */
+  /* tt = TikTok video id (poster + player). ig = Instagram reel code when
+     the views quoted are the Instagram count; the frame links there too.
+     views = public count at time of writing; empty hides it. */
   work: [
     { name:"American Dream &times; adidas", sub:"World Cup 2026 drop",   cat:"brand",  views:"84.7K", tt:"7609782004858588430" },
     { name:"The Lion King", sub:"Disney on Broadway, paid partnership",  cat:"brand",  views:"",      tt:"7643527095435414797" },
@@ -654,7 +656,7 @@ const DATA = {
     { name:"SanDisk", sub:"Sponsored post",                               cat:"brand",  views:"",      tt:"7619161320709016846" },
     { name:"Medieval Times", sub:"Birthday night out",                    cat:"travel", views:"437K",  tt:"7582098997339376909" },
     { name:"Dominican Republic", sub:"Travel diary",                      cat:"travel", views:"106K",  tt:"7454323371036331310" },
-    { name:"Maracaibo", sub:"NJ's hottest new restaurant",                cat:"travel", views:"72.3K", ig:"DMl6luyJvYO" },
+    { name:"Maracaibo", sub:"NJ's hottest new restaurant",                cat:"travel", views:"72.3K", tt:"7531563574930590990", ig:"DMl6luyJvYO" },
     { name:"Cafe Habibti", sub:"Greenwich Village",                       cat:"travel", views:"19.4K", tt:"7573898865015835917" },
     { name:"Chashni", sub:"Pakistani cafe, NYC",                          cat:"travel", views:"6.8K",  tt:"7474812800326438190" },
     { name:"Cafe Sabarsky", sub:"Upper East Side",                        cat:"travel", views:"",      tt:"7493293592585293102" },
@@ -666,12 +668,12 @@ const DATA = {
     { name:"Philosophy", sub:"Skincare",                                  cat:"beauty", views:"",      tt:"7652203005076376846" },
     { name:"The Creme Shop", sub:"Jersey City pop-up",                    cat:"beauty", views:"",      tt:"7556417232440429837" },
     { name:"LOOPS", sub:"Face masks",                                     cat:"beauty", views:"",      tt:"7489290523954679086" },
-    { name:"Bombshell blowout", sub:"Hair",                               cat:"beauty", views:"11.7K", ig:"DP-WrCWjP37" },
+    { name:"The perfect blowout", sub:"Hair",                             cat:"beauty", views:"65.5K", tt:"7536690459322617101" },
     { name:"Marshalls finds", sub:"Lululemon at Marshalls",               cat:"viral",  views:"976K",  tt:"7343846926770638126" },
     { name:"Dominicanas", sub:"Culture",                                  cat:"viral",  views:"668K",  tt:"7188599515220430123" },
     { name:"Santo Domingo", sub:"Stitch, culture",                        cat:"viral",  views:"239K",  tt:"6935566941281094917" },
-    { name:"Friendship", sub:"Instagram Reel",                            cat:"viral",  views:"1.1M",  ig:"DXN_i9WDN5l" },
-    { name:"Good Friday at Old St. Patrick's", sub:"Instagram Reel",      cat:"viral",  views:"1.2M",  ig:"DWstXFIjWqv" },
+    { name:"Friendship", sub:"Instagram Reel",                            cat:"viral",  views:"1.1M",  tt:"7629441846468414734", ig:"DXN_i9WDN5l" },
+    { name:"Good Friday at Old St. Patrick's", sub:"Instagram Reel",      cat:"viral",  views:"1.2M",  tt:"7624756757545405710", ig:"DWstXFIjWqv" },
     { name:"Stitch", sub:"My most viewed video",                          cat:"viral",  views:"11M",   tt:"6957434353093807366" }
   ],
 
@@ -756,38 +758,33 @@ function fillPosters(root){
 
 function reel(cat){
   const items = DATA.work.filter(w => cat === "all" || w.cat === cat);
-  $("#reel").innerHTML = items.map(w => {
-    const k = w.tt ? "tt" : "ig", id = w.tt || w.ig;
-    return '<button type="button" class="frame" data-k="' + k + '" data-id="' + id + '">' +
-      '<div class="win' + (k === "ig" ? " ig" : "") + '"' + (w.tt ? ' data-poster="' + w.tt + '"' : '') + '>' +
+  $("#reel").innerHTML = items.map(w =>
+    '<button type="button" class="frame" data-tt="' + w.tt + '" data-ig="' + (w.ig || "") + '">' +
+      '<div class="win" data-poster="' + w.tt + '">' +
         '<div class="ph"><i></i><b>' + w.name + '</b></div>' +
-        '<span class="badge">' + (k === "tt" ? "TikTok" : "Instagram") + '</span><span class="play"></span></div>' +
+        '<span class="badge">' + (w.ig ? "Instagram" : "TikTok") + '</span><span class="play"></span></div>' +
       '<div class="cap"><span class="nm">' + w.name + '</span>' +
       (w.views ? '<span class="vw">' + esc(w.views) + '</span>' : '') + '</div>' +
       (w.sub ? '<span class="sub">' + w.sub + '</span>' : '') +
-    '</button>';
-  }).join("");
+    '</button>').join("");
   $("#reel").scrollLeft = 0;
   fillPosters($("#reel"));
 }
 reel("all");
 
 /* lightbox player */
-function play(k, id){
-  const f = $("#lbf"), box = $("#lbbox");
-  box.classList.toggle("ig", k === "ig");
-  f.src = k === "tt"
-    ? "https://www.tiktok.com/player/v1/" + id + "?autoplay=1&rel=0&description=0"
-    : "https://www.instagram.com/reel/" + id + "/embed/";
-  $("#lbo").href = k === "tt" ? ttUrl(id) : igUrl(id);
-  $("#lbo").textContent = k === "tt" ? "Open on TikTok" : "Open on Instagram";
+function play(tt, ig){
+  $("#lbf").src = "https://www.tiktok.com/player/v1/" + tt +
+    "?autoplay=1&controls=1&play_button=1&progress_bar=1&volume_control=1&fullscreen_button=1&timestamp=1&rel=0&description=0&music_info=0";
+  $("#lbo").href = ig ? igUrl(ig) : ttUrl(tt);
+  $("#lbo").textContent = ig ? "Watch on Instagram" : "Open on TikTok";
   $("#lb").classList.add("on");
   $("#lbx").focus();
 }
 function closeLb(){ $("#lb").classList.remove("on"); $("#lbf").src = "about:blank"; }
 $("#reel").addEventListener("click", e => {
   const fr = e.target.closest(".frame"); if(!fr) return;
-  play(fr.dataset.k, fr.dataset.id);
+  play(fr.dataset.tt, fr.dataset.ig);
 });
 $("#lbx").addEventListener("click", closeLb);
 $("#lb").addEventListener("click", e => { if(e.target.id === "lb") closeLb(); });
@@ -799,22 +796,22 @@ $("#tabs").addEventListener("click", e => {
   reel(b.dataset.c);
 });
 
-/* drag to scrub */
+/* drag to scrub (mouse only; touch uses native swipe) */
 (function(){
   const film = $("#film"), rl = $("#reel");
   let down = false, startX = 0, startL = 0, moved = 0;
   film.addEventListener("pointerdown", e => {
+    if(e.pointerType !== "mouse" || e.button !== 0) return;
     down = true; moved = 0; startX = e.clientX; startL = rl.scrollLeft;
-    film.classList.add("dragging"); film.setPointerCapture(e.pointerId);
   });
-  film.addEventListener("pointermove", e => {
+  addEventListener("pointermove", e => {
     if(!down) return;
-    const dx = e.clientX - startX; moved = Math.abs(dx); rl.scrollLeft = startL - dx;
+    const dx = e.clientX - startX; moved = Math.max(moved, Math.abs(dx));
+    if(moved > 6){ film.classList.add("dragging"); rl.scrollLeft = startL - dx; }
   });
-  const end = () => { down = false; film.classList.remove("dragging"); };
-  film.addEventListener("pointerup", end);
-  film.addEventListener("pointercancel", end);
-  film.addEventListener("click", e => { if(moved > 6) e.preventDefault(); }, true);
+  addEventListener("pointerup", () => { down = false; film.classList.remove("dragging"); });
+  film.addEventListener("click", e => { if(moved > 6){ e.preventDefault(); e.stopPropagation(); moved = 0; } }, true);
+  film.addEventListener("dragstart", e => e.preventDefault());
 })();
 
 /* concepts */
