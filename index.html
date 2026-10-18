@@ -437,6 +437,8 @@ body::before{
 .direct{margin-top:18px;font-family:var(--garam);font-size:15.5px;opacity:.75;line-height:1.6}
 .direct a{color:var(--moss);text-decoration:none;border-bottom:1px solid currentColor}
 
+.src-note{font-family:var(--jost);font-size:9px;letter-spacing:.2em;text-transform:uppercase;opacity:.55;margin:18px 0 0}
+
 /* poster + play badge on film frames */
 .frame{cursor:pointer;background:none;border:0;padding:0;text-align:left;font:inherit}
 .frame .win .badge{position:absolute;left:8px;top:8px;z-index:2;font-family:var(--jost);font-size:8px;letter-spacing:.2em;
@@ -513,7 +515,7 @@ footer a:hover{color:var(--brass)}
     <h2 class="smash rv" data-fit>REACH &amp; PERFORMANCE</h2>
     <div class="dials rv" id="dials"></div>
     <div class="ledger rv" id="ledger"></div>
-    <p class="note rv">Instagram figures from account insights. Screenshots available on request.</p>
+    <p class="src-note rv">Instagram figures from account insights &middot; screenshots on request</p>
   </section>
 
   <!-- ======================= BRANDS ======================= -->
@@ -642,7 +644,10 @@ const DATA = {
     { name:"Philosophy",         cat:"Skincare" },
     { name:"The Creme Shop",     cat:"Beauty" },
     { name:"LOOPS",              cat:"Skincare" },
-    { name:"espoir",             cat:"Beauty" }
+    { name:"espoir",             cat:"Beauty" },
+    { name:"adidas",             cat:"Sportswear" },
+    { name:"Medieval Times",     cat:"Entertainment" },
+    { name:"Dunkin'",            cat:"Food &amp; drink" }
   ],
 
   /* tt = TikTok video id (poster + player). ig = Instagram reel code when
