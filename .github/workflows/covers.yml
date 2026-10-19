@@ -20,6 +20,10 @@ jobs:
       - name: Download a cover for every TikTok video on the page
         run: |
           mkdir -p Media/covers
+          for f in Media/covers/*.image Media/covers/*.webp; do
+            [ -e "$f" ] || continue
+            mv "$f" "${f%.*}.jpg"
+          done
           for id in $(grep -oE 'tt:"[0-9]+"' index.html | grep -oE '[0-9]+' | sort -u); do
             if [ -s "Media/covers/$id.jpg" ]; then continue; fi
             yt-dlp --impersonate chrome --skip-download --write-thumbnail --convert-thumbnails jpg \
@@ -27,11 +31,15 @@ jobs:
               "https://www.tiktok.com/@ashleyxacevedo/video/$id" || echo "Could not fetch $id"
             sleep 3
           done
+          for f in Media/covers/*.image Media/covers/*.webp; do
+            [ -e "$f" ] || continue
+            mv "$f" "${f%.*}.jpg"
+          done
           ls -la Media/covers
       - name: Save covers to the repo
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add Media/covers
+          git add -A Media/covers
           git diff --cached --quiet || git commit -m "Add TikTok cover images"
           git push
