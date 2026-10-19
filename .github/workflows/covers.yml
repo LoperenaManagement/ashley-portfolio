@@ -1,0 +1,37 @@
+name: Fetch TikTok covers
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - index.html
+      - .github/workflows/covers.yml
+
+permissions:
+  contents: write
+
+jobs:
+  covers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install yt-dlp
+        run: pip install -U yt-dlp
+      - name: Download a cover for every TikTok video on the page
+        run: |
+          mkdir -p Media/covers
+          for id in $(grep -oE 'tt:"[0-9]+"' index.html | grep -oE '[0-9]+' | sort -u); do
+            if [ -s "Media/covers/$id.jpg" ]; then continue; fi
+            yt-dlp --skip-download --write-thumbnail --convert-thumbnails jpg \
+              -o "Media/covers/$id.%(ext)s" \
+              "https://www.tiktok.com/@ashleyxacevedo/video/$id" || echo "Could not fetch $id"
+            sleep 3
+          done
+          ls -la Media/covers
+      - name: Save covers to the repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Media/covers
+          git diff --cached --quiet || git commit -m "Add TikTok cover images"
+          git push
