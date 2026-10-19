@@ -450,9 +450,7 @@ body::before{
 .frame .sub{display:block;font-family:var(--garam);font-size:13.5px;line-height:1.35;opacity:.7;padding:4px 2px 0}
 
 .face.front .img img,.frame .win img{position:absolute;inset:0}
-.face.front .img iframe.still,.frame .win iframe.still{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none;z-index:1;background:#2B2723}
 .frame .win .badge,.frame .win .play{z-index:3}
-.frame .win:has(iframe.still) .badge{display:none}
 .face.front .img > i{z-index:4}
 
 /* video lightbox */
@@ -755,25 +753,23 @@ function poster(id){
   return posters[id];
 }
 function fillPosters(root){
+  /* Covers are saved in Media/covers by the repo's cover workflow.
+     If one is missing, try TikTok's oEmbed thumbnail; otherwise the
+     labelled placeholder stays. */
   root.querySelectorAll("[data-poster]").forEach(el => {
     const id = el.dataset.poster;
-    /* TikTok's still player shows the real cover frame. Used whenever
-       oEmbed returns no thumbnail or the thumbnail fails to load. */
-    const still = () => {
-      if(el.querySelector("iframe.still")) return;
-      const f = document.createElement("iframe");
-      f.className = "still"; f.loading = "lazy"; f.tabIndex = -1;
-      f.setAttribute("aria-hidden", "true"); f.title = "";
-      f.src = "https://www.tiktok.com/player/v1/" + id +
-        "?autoplay=0&controls=0&progress_bar=0&play_button=0&volume_control=0&fullscreen_button=0&timestamp=0&music_info=0&description=0&rel=0&native_context_menu=0&closed_caption=0";
-      el.appendChild(f);
+    const img = new Image(); img.alt = ""; img.loading = "lazy";
+    img.src = "Media/covers/" + id + ".jpg";
+    img.onerror = () => {
+      img.remove();
+      poster(id).then(src => {
+        if(!src) return;
+        const t = new Image(); t.alt = ""; t.loading = "lazy"; t.src = src;
+        t.onerror = () => t.remove();
+        el.appendChild(t);
+      });
     };
-    poster(id).then(src => {
-      if(!src){ still(); return; }
-      const img = new Image(); img.alt = ""; img.loading = "lazy"; img.src = src;
-      img.onerror = () => { img.remove(); still(); };
-      el.appendChild(img);
-    });
+    el.appendChild(img);
   });
 }
 
