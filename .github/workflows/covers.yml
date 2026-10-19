@@ -16,13 +16,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install yt-dlp
-        run: pip install -U yt-dlp
+        run: pip install -U "yt-dlp[default,curl-cffi]"
       - name: Download a cover for every TikTok video on the page
         run: |
           mkdir -p Media/covers
           for id in $(grep -oE 'tt:"[0-9]+"' index.html | grep -oE '[0-9]+' | sort -u); do
             if [ -s "Media/covers/$id.jpg" ]; then continue; fi
-            yt-dlp --skip-download --write-thumbnail --convert-thumbnails jpg \
+            yt-dlp --impersonate chrome --skip-download --write-thumbnail --convert-thumbnails jpg \
               -o "Media/covers/$id.%(ext)s" \
               "https://www.tiktok.com/@ashleyxacevedo/video/$id" || echo "Could not fetch $id"
             sleep 3
