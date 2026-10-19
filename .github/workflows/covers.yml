@@ -20,7 +20,7 @@ jobs:
       - name: Download a cover for every TikTok video on the page
         run: |
           mkdir -p Media/covers
-          for f in Media/covers/*.image Media/covers/*.webp; do
+          for f in Media/covers/*.image Media/covers/*.webp Media/covers/*.jpeg Media/covers/*.png; do
             [ -e "$f" ] || continue
             mv "$f" "${f%.*}.jpg"
           done
@@ -31,7 +31,7 @@ jobs:
               "https://www.tiktok.com/@ashleyxacevedo/video/$id" || echo "Could not fetch $id"
             sleep 3
           done
-          for f in Media/covers/*.image Media/covers/*.webp; do
+          for f in Media/covers/*.image Media/covers/*.webp Media/covers/*.jpeg Media/covers/*.png; do
             [ -e "$f" ] || continue
             mv "$f" "${f%.*}.jpg"
           done
